@@ -8,7 +8,7 @@
     "build": "webpack --display minimal --progress --colors --env.mode=production",
     "buildDebug": "webpack --display --progress --colors --env.mode=production"
   },
-  "author": "Darya Konoval",
+  "author": "Nataly",
   "license": "ISC",
   "devDependencies": {
     "@sfem/breakpoint": "^1.2.1",
