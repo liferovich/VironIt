@@ -1,4 +1,4 @@
-
+import './app.scss';
 
 
 const url = "../resources/cities.json";
@@ -43,7 +43,8 @@ const showCities = cities => {
 
 function showWeather(response) {
     console.log(response);
-    let tablo = document.getElementById("tablo").classList.add("active");
+    let tablo = document.getElementById("tablo");
+    tablo.classList.add("active");
     let dataString = JSON.stringify(response);
     var now = new Date();
     let h = now.getHours();

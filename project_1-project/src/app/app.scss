@@ -1,10 +1,7 @@
 .active {
-  display: block;
+  display: block !important;
 }
-
-
-@import "app/_scss-core/_core";
-
-@import "scss/helpers";
-@import "scss/typography";
+.weather {
+  display: none;
+}
 
