@@ -1,33 +1,154 @@
-html {
-  min-width: 100%;
-  min-height: 100%;
-  overflow-x: hidden;
-}
-html,
-body {
-  margin: 0px;
-  padding: 0px;
-}
+@import "./scss/fonts.scss";
+
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-html,
+h1,
+h2,
+h3,
+h4,
+a,
+p,
+span,
+input {
+  color: black;
+  font-family: "Montserrat-Medium";
+}
+p,
+span {
+  font-size: 18px;
+  font-family: "NunitoSans-Regular";
+}
+img {
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+}
+a {
+  font-family: "Pe-icon-7-stroke";
+  text-decoration: none;
+}
 body {
-  margin: 0px;
-  padding: 0px;
+  background-color: white;
 }
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
+
+@media (min-width: 1200px) {
+  .col-lg-9 {
+    width: 100%;
+    flex: 0 0 75%;
+  }
+
+  .col-lg-6 {
+    width: 100%;
+    flex: 0 0 50%;
+  }
+  .col-lg-4 {
+    width: 100%;
+    flex: 0 0 33.333%;
+  }
+  .col-lg-3 {
+    width: 100%;
+    flex: 0 0 25%;
+  }
+  .col-lg-2 {
+    width: 100%;
+    flex: 0 0 16.666%;
+  }
+  .container {
+    max-width: 1170px;
+    width: 100%;
+    margin: auto;
+  }
+}
+@media (max-width: 576px) {
+  input,
+  textarea,
+  button,
+  select,
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  .col-xs-12 {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+  .col-xs-9 {
+    width: 100%;
+    flex: 0 0 75%;
+  }
+  .col-xs-6 {
+    width: 100%;
+    flex: 0 0 50%;
+  }
+  .col-xs-4 {
+    width: 100%;
+    flex: 0 0 33.333%;
+  }
+  .col-xs-3 {
+    width: 100%;
+    flex: 0 0 25%;
+  }
+  .col-xs-2 {
+    width: 100%;
+    flex: 0 0 16.666%;
+  }
+}
+@media (min-width: 577px) and (max-width: 1199px) {
+  input,
+  textarea,
+  button,
+  select,
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  .col-md-12 {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+  .col-md-9 {
+    width: 100%;
+    flex: 0 0 75%;
+  }
+
+  .col-md-6 {
+    width: 100%;
+    flex: 0 0 50%;
+  }
+  .col-md-4 {
+    width: 100%;
+    flex: 0 0 33.333%;
+  }
+  .col-md-3 {
+    width: 100%;
+    flex: 0 0 25%;
+  }
+  .col-md-2 {
+    width: 100%;
+    flex: 0 0 16.666%;
+  }
+  .container {
+    max-width: 540px;
+    width: 100%;
+    margin: auto;
+  }
+  p,
+  span {
+    font-size: 18px;
+  }
+}
+
 
 .active {
   display: block !important;
 }
 .weather {
-  display: none;
+  // display: none;
 }
 
