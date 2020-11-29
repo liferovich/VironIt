@@ -4,49 +4,66 @@
 <head lang="ru">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Test</title>
+    <title>Погода в городах Беларуси</title>
 
 </head>
 
 <body>
+    <div class="header">
+        <div class="header_inner">
+            <a href="#" class="logo">
+                <img src="./img/logo.png" alt="logo">
+                <p class="logo_text">bsuir</p>
+            </a>
+        </div>
+    </div>
     <div class="main">
         <div class="container">
             <div class="main_inner">
-                <h3>Погода в беларусских городах</h3>
-                
+                <h1>Погода в городах Беларуси</h3>
+                    <p>Выберите город:</p>
+                    <select id="cities">
+                        <option value="null">Выберите город</option>
+                    </select>
+
+                    <div id="tablo" class="weather">
+                        <h2 id="nameCity"></h2>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-12 col-xs-12">
+                                <div class="day">
+                                    <h3 id="day1">Сегодня</h3>
+                                    <img id="tmp4" /><br>
+                                    <div id="demo4"></div>
+                                    <div id="demo5"></div>
+                                    <div id="demo6"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-xs-12">
+                                <div class="day">
+                                    <h3 id="day2">Завтра</h3>
+                                    <img id="tmp5" /><br>
+                                    <div id="demo7"></div>
+                                    <div id="demo8"></div>
+                                    <div id="demo9"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-xs-12">
+                                <div class="day">
+                                    <h3 id="day3">Послезавтра</h3>
+                                    <img id="tmp6" /><br>
+                                    <div id="demo10"></div>
+                                    <div id="demo11"></div>
+                                    <div id="demo12"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
-    <select id="cities">
-        <option value="null">Выберите город</option>
-    </select>
+    <div class="footer">
 
-    <div id="tablo" class="weather">
-        <div class="day">
-            <p id="day1">Сегодня</p>
-            <img id="tmp4" /><br>
-            <div id="demo4"></div>
-            <div id="demo5"></div>
-            <div id="demo6"></div>
-        </div>
-
-        <div class="day">
-            <p id="day2">Завтра</p>
-            <img id="tmp5" /><br>
-            <div id="demo7"></div>
-            <div id="demo8"></div>
-            <div id="demo9"></div>
-        </div>
-
-        <div class="day">
-            <p id="day3">Послезавтра</p>
-            <img id="tmp6" /><br>
-            <div id="demo10"></div>
-            <div id="demo11"></div>
-            <div id="demo12"></div>
-        </div>
     </div>
-
 </body>
 
 </html>
