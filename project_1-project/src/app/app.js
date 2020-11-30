@@ -94,6 +94,6 @@ httpGetCities(url);
 let cities = document.querySelector("#cities");
 cities.addEventListener("change", function () {
     console.log(this.value);
-    document.getElementById("nameCity").innerHTML+= `Погода в городе ${this.value}`;
+    document.getElementById("nameCity").innerHTML= `Погода в городе ${this.value}`;
     getWeather(this.value);
 }); 
