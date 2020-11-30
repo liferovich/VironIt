@@ -1,15 +1,14 @@
 import './app.scss';
 
-const url = "../resources/cities.json";
+const url = "https://gist.githubusercontent.com/alex-oleshkevich/6946d85bf075a6049027306538629794/raw/3986e8e1ade2d4e1186f8fee719960de32ac6955/by-cities.json";
 
 
 const httpGetCities=(url) => {
     return new Promise(function (resolve, reject) {
 
         var xhr = new XMLHttpRequest();
-        xhr.overrideMimeType("application/json");
         xhr.open('GET', url, true);
-        xhr.withCredentials = false;
+        xhr.overrideMimeType("application/json");
        
         xhr.onload = function () {
             if (this.status == 200) {
@@ -29,15 +28,19 @@ const httpGetCities=(url) => {
     });
 }
 
-const showCities = cities => {
-    let data = JSON.parse(cities);
-    let items = data.items;
+const showCities = doc => {
+    let data = JSON.parse(doc);
+    let regions = data[0].regions;
     let sel = document.getElementById("cities");
-    for (let i = 0; i < items.length; i++) {
-        let name = items[i].name;
-        let val = items[i].lat;
-        let opt = `<option val="${val}">${name}</option>`
-        sel.innerHTML += opt;
+    for (let j=0; j < regions.length;j++){
+
+        let city = regions[j].cities;
+        for (let i=0; i<city.length; i++){
+            let name = city[i].name;
+            let val = city[i].lat;
+            let opt = `<option val="${val}">${name}</option>`
+            sel.innerHTML += opt;
+        }
     }
 }
 
