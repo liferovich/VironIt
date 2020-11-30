@@ -1,16 +1,16 @@
 import './app.scss';
 
-
 const url = "../resources/cities.json";
 
 
-function httpGetCities(url) {
+const httpGetCities=(url) => {
     return new Promise(function (resolve, reject) {
 
         var xhr = new XMLHttpRequest();
         xhr.overrideMimeType("application/json");
         xhr.open('GET', url, true);
-
+        xhr.withCredentials = false;
+       
         xhr.onload = function () {
             if (this.status == 200) {
                 resolve(this.response);
