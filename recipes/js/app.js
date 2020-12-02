@@ -1,12 +1,12 @@
 "use strict";
 
-var drinkStorage = new HashStorage();
+let drinkStorage = new HashStorage();
 
-var nameDrink = document.getElementById("drinkName");
+let nameDrink = document.getElementById("drinkName");
 
 nameDrink.onclick = function () {
-    var keyDrink = prompt("Название напитка");
-    var valueDrink = {};
+    let keyDrink = prompt("Название напитка");
+    let valueDrink = {};
 
     valueDrink.alcohol = confirm(keyDrink + " - алкогольный напиток?");
     valueDrink.ingrediens = prompt("Ингредиенты напитка "+ keyDrink+"(через запятую): ");
@@ -14,8 +14,8 @@ nameDrink.onclick = function () {
     drinkStorage.addValue(keyDrink, valueDrink);
 }
 
-var info = document.getElementById("drinkInfo");
-var drinkInfoPlace = document.getElementById("drinkInfoPlace");
+let info = document.getElementById("drinkInfo");
+let drinkInfoPlace = document.getElementById("drinkInfoPlace");
 
 info.onclick = function () {
     let drinkInfo = prompt("Название напитка");
@@ -31,7 +31,7 @@ info.onclick = function () {
     }
 }
 
-var drinkDel = document.getElementById("drinkInfoDel");
+let drinkDel = document.getElementById("drinkInfoDel");
 
 drinkDel.onclick = function () {
     let drinkDel = prompt("Название напитка");
@@ -44,7 +44,7 @@ drinkDel.onclick = function () {
 
 }
 
-var drinkList = document.getElementById("drinkList");
+let drinkList = document.getElementById("drinkList");
 
 drinkList.onclick = function () {
     drinkInfoPlace.innerHTML = drinkStorage.getKeys();
