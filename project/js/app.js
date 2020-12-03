@@ -1,3 +1,4 @@
+let calendar = document.getElementById("calendar");
 
 const createCalendar = (month, year) => {
 
@@ -32,7 +33,6 @@ const createCalendar = (month, year) => {
     // закрыть таблицу
     table += '</tr></table>';
 
-    let calendar = document.getElementById("calendar");
     calendar.innerHTML = table;
 }
 
@@ -42,6 +42,13 @@ function getDayWeek(date) { // день недели от 0 (пн) до 6 (вс)
     return day - 1;
 }
 
-let monthInput = prompt("Введите номер месяца");
-let yearInput = prompt("Введите год");
-createCalendar(monthInput, yearInput);
+let button = document.getElementById("btnNewDate");
+button.onclick = () => {
+    let monthInput = prompt("Введите номер месяца");
+    let yearInput = prompt("Введите год");
+    if (monthInput && yearInput){
+        createCalendar(monthInput, yearInput);
+    } else {
+        calendar.innerHTML = 'неверные данные';
+    }   
+}
