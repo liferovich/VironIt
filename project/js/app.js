@@ -42,4 +42,6 @@ function getDayWeek(date) { // день недели от 0 (пн) до 6 (вс)
     return day - 1;
 }
 
-createCalendar(12, 2020);
+let monthInput = prompt("Введите номер месяца");
+let yearInput = prompt("Введите год");
+createCalendar(monthInput, yearInput);
