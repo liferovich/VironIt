@@ -22,7 +22,7 @@ let server = new http.Server((req, res) => {
   if (req.method === 'POST') {
     req.on('data', (data) => { // Пришла информация - записали.
       let dataJSON = JSON.parse(data);
-      arr = arr.concat(dataJSON);
+      arr.push(dataJSON);
       res.end('Массив добавлен!')
     });
   }
