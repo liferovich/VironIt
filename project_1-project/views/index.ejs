@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <!-- <link rel="apple-touch-icon" href="icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.
+      </p>
+    <![endif]-->
+    <div class="list-container">
+      <h1>To-Do List</h1>
+      <div class="list-items">
+        <div>
+          <ul>
+            <% for (item of data.items) { %>
+              <% if (item.status === 'complete') { %>
+              <li>
+                <span style="text-decoration: line-through">&nbsp;<%= item.description %></span>
+                <a href="/api/delete/<%= +item.id %>"><button class="right">x</button></a>
+              </li>
+              <% } else { %>
+                <li>
+                  <a href="/api/completed/<%= +item.id %>"><button class="complete">&#10004;</button></a>
+                  &nbsp;<%= item.description %>
+                  <a href="/api/delete/<%= +item.id %>"><button class="right">x</button></a>
+                </li>
+              <% } %>
+            <% } %>
+          </ul>
+        </div>
+        <div>
+          <form action="/api/post" method="POST">
+            <input type="text" name="itemInput" id="itemInput" required autofocus>
+            <input type="submit" value="Add">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
