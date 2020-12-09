@@ -1,19 +1,20 @@
 const connection = require('../model/db.js');
 
 class UsersService {
-    // usersList=[];
-    // getAllUsers = () => {
-    //    let usersList;
-    //    connection.query('select * from users', function (err, rows){
+    
+    // constructor(){
+    //     this.usersList = [];
+    // }
+    // getAllUsers = async () => {
+    //    await connection.query('select * from users', function (err, rows){
     //         if (err) {
     //             console.log("Error in select query", + err);
     //         } else {
-    //             console.log(rows);
-    //             usersList = rows;
+    //             this.usersList=JSON.parse(JSON.stringify(rows));
+    //             return this.usersList;               
     //         }
     //     });
-    //     console.log(usersList);
-    //     // return usersList;
+    //     return this.usersList;
     // }
     // addUser = (user) => {
     //     this.usersList.push(user);
