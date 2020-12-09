@@ -1,32 +1,51 @@
-const UsersService = require('../services/users.service.js');
+// const UsersService = require('../services/users.service.js');
 const connection = require('../model/db.js');
 
 class UsersController {
-    service= new UsersService();
-    constructor(){
-        this.get = this.get.bind(this);
-    }
-    getAll(req, res, next){
-        query = connection.query('select * from users', function (err, rows){
+    // service= new UsersService();
+    getAll = (req, res, next) => {
+        connection.query('select * from users', function (err, results){
             if (err) {
-                console.log("Error in select query", +err);
+                console.log("Error in query getAll", + err);
             } else {
-                req.send(rows);
+                res
+                .status(200)
+                .send(results);
             }
         });
-        res
-        .status(200)
-        .send(this.service.getAllUsers());
+        // res
+        // .status(200)
+        // .send(this.service.getAllUsers());
     }
     add = (req, res, next) => {
-        res
-        .status(201)
-        .send(this.service.addUser(req.body));
+        let data = {id: req.body.id, name: req.body.name};
+        connection.query('insert into users set ?', data, function (err, results){
+            if (err) {
+                console.log("Error in query add", + err);
+            } else {
+                res
+                .status(201)
+                .send(results);
+            }
+        });
+    //     res
+    //     .status(201)
+    //     .send(this.service.addUser(req.body));
     }
     update = (req, res, next) => {
-        res
-        .status(201)
-        .send(this.service.updateUsers(req.body));
+        let data = {id: req.body.id, name: req.body.name};
+        connection.query('update users set name='+req.body.name+' where id='+req.body.id, function (err, results){
+            if (err) {
+                console.log("Error in query update", + err);
+            } else {
+                res
+                .status(201)
+                .send(results);
+            }
+        });
+        // res
+        // .status(201)
+        // .send(this.service.updateUsers(req.body));
     }
 }
 module.exports = UsersController;

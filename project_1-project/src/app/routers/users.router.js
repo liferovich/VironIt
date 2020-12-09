@@ -6,7 +6,7 @@ const router = express.Router();
 const controller = new UsersController(); 
 
 router
-    .get('/', logPath, controller.get)
+    .get('/', logPath, controller.getAll)
     .post('/', controller.add)
     .put('/', controller.update)
 
