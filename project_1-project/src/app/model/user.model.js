@@ -46,6 +46,7 @@ User.getAll = result => {
     });
 };
 
+
 User.updateById = (id, deal, result) => {
     sql.query(
         "UPDATE TODO SET text =? WHERE id = ?",
